@@ -2,18 +2,8 @@ import React, { Component } from "react";
 import './assets/stylesheets/main.scss';
 import Waypoint from 'react-waypoint';
 
-var currentIndex = 0;
-var generateItem = function() {
-  var chooseCat = Math.floor(Math.random() * 2);
-  var ind = (currentIndex % 10) + 1;
-  var newImage = (chooseCat) ?
-    'http://lorempixel.com/output/cats-q-c-640-480-' + ind + '.jpg':
-    'http://lorempixel.com/output/technics-q-c-640-480-' + ind + '.jpg';
-  currentIndex++;
-  return newImage;
-}
-
 class App extends Component {
+  
   constructor(props) {
     super(props);
     var initialItems = [
@@ -74,9 +64,6 @@ class App extends Component {
     window.setTimeout(function() {
       // add data
       var currentItems = this.state.items;
-      const x = this.generateItem;
-      console.log(this.state.items)
-      console.log('images', x);
       for (var i = 0; i < itemsToAdd; i++) {
         currentItems.push(this._generateItem());
       }
