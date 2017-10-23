@@ -1,0 +1,35 @@
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "./colorPallette";
+@import "./mixins";
+/**
+ * bootstrap's input groups modify the float & z-index of form-controls, this allows awesomplete
+ * to assume the position of the form-control and reset the input
+ */
+
+ .infite-scroll--list {
+    height: 560px;
+    border-radius: 2px;
+    margin: 100px auto;
+    max-width: 580px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    &.default-parent-height {
+      height: auto;
+    }
+}
+
+ .scroll-data-block {
+   border: 1px solid $colorAAA;
+   padding: 5px;
+   margin-bottom: 10px;
+ }
+
+ .read-more--btn {
+   background-color: $white;
+   outline: none;
+   border: none;
+   padding: 0;
+   margin: 5px 0;
+   @include font($colorBlue, 16px, 20px, $fontRaleway, 400);
+ }
